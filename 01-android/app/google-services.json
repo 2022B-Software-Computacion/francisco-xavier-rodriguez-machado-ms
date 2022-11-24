@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1029445625806",
+    "project_id": "b-s-rmfx",
+    "storage_bucket": "b-s-rmfx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1029445625806:android:e7a1300d1ec3f61ea36d9f",
+        "android_client_info": {
+          "package_name": "com.example.rmfxaplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1029445625806-14ifeoiqf7rnroaiuqmcdpt7bvo8dde4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMoizfKIXWIJRGmhkUhdkwciicxi4mZww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1029445625806-14ifeoiqf7rnroaiuqmcdpt7bvo8dde4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
