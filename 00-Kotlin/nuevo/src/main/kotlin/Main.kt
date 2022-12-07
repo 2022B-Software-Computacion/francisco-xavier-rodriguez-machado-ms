@@ -82,3 +82,85 @@ fun calcularSueldo(
         return sueldo * (100/tasa) + bonoEspecial
     }
 }
+
+abstract class NumerosJava{
+    protected val numeroUno: Int
+    private val numeroDos: Int
+
+    constructor(
+        uno: Int,
+        dos: Int
+    ){//Bloque codigo constructor
+        this.numeroUno = uno
+        this.numeroDos = dos
+        println("Inicializacion")
+    }
+}
+
+//CLASE KOTLIN
+abstract class Numeros( // Constructor Primario
+    // uno: Int,  // Parametro
+    // public var uno: Int, // Propiedad de la clase publica
+    // var uno: Int, // Propiedad de la clase publica
+    protected val numeroUno: Int // Propiedad de la clase protected
+    protected val numeroDos: Int // Propiedad de la clase private
+){
+    // protected val numeroUno: Int
+    // var cedula String = "";
+    // public var cedula: String = "";
+    init {  // Bloque de codigo del constructor primario
+    // this.numeroUno = uno
+    this.numeroUno
+        numeroUno
+    this.numeroDos
+        numeroDos
+    println("Inicializacion")
+    }
+}
+
+class Suma( // Constructor Primario Suma
+    uno: Int, // Parametro
+    dos: Int  // Parametro
+): Numeros(uno, dos){
+    init { // Bloque de Constructor Primario
+        this.numeroUno
+        this.numeroDos
+    }
+    constructor( // Segundo Constructor
+        uno: Int?, // parametro
+        dos: Int  // parametro
+    ): this( // llamada constructor primario
+        if (uno == null) 0 else uno,
+        dos
+    ){
+
+    }
+    constructor( // tercer Constructor
+        uno: Int?, // parametro
+        dos: Int  // parametro
+    ): this( // llamada constructor primario
+        uno,
+        if (dos == null) 0 else uno
+    )
+    constructor( // cuarto Constructor
+        uno: Int?, // parametro
+        dos: Int  // parametro
+    ): this( // llamada constructor primario
+        if (uno == null) 0 else uno,
+        if (dos == null) 0 else uno
+    )
+    public fun sumar(): Int{
+        return numeroUno + numeroDos
+    }
+    companion object{ // atributos y metodos "compartidos" entre las instancias
+        val pi = 3.14
+    fun elevarAlCuadrado(num: Int): Int{
+        return num * num
+    }
+        val historiaSumas = arrayListOf<Int>()
+        fun agregarHistorial(valorNuevaSuma:Int){
+            historiaSumas.add(valorNuevaSuma)
+        }
+    }
+}
+

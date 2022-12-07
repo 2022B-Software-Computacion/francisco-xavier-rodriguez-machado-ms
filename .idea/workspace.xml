@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="591df29d-9f06-4414-ac73-dc9045daaf7c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/00-Kotlin/nuevo/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="591df29d-9f06-4414-ac73-dc9045daaf7c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +37,7 @@
       <updated>1669131267887</updated>
       <workItem from="1669131269501" duration="869000" />
       <workItem from="1669220944101" duration="975000" />
-      <workItem from="1670336791485" duration="1637000" />
+      <workItem from="1670336791485" duration="1638000" />
     </task>
     <servers />
   </component>
