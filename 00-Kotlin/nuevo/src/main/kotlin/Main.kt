@@ -54,6 +54,54 @@ fun main(){
     }
 
     val coqueteo = if(estadoCivilWhen == "S") "SI" else "NO"
+
+
+// Tipos de Arreglos
+
+// Arreglo estático
+
+    val arregloEstatico: Array<Int> = arrayOf(1,2,3)
+    println(arregloEstatico)
+    // Arreglos Dinamicos
+    val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(1,2,3,4,5,6,7,8,9,10)
+    println(arregloDinamico)
+    arregloDinamico.add(11)
+    arregloDinamico.add(12)
+    println(arregloDinamico)
+
+    //OPERADORES -> Siven para los arreglos estaticos y dinamicos
+
+    // FOR EACH - Unit
+
+    //Iterar un arreglo
+    val respuestaForEach: Unit = arregloDinamico
+        .forEach{
+            valorActual: Int ->
+            println("Valor actual: ${valorActual}")
+        }
+    arregloEstatico
+        .forEachIndexed {indice: Int, valorActual: Int ->
+            println("Valor ${valorActual} Indice: ${indice}")
+
+        }
+    println(respuestaForEach)
+
+    //OPERADOR: tranforma el arreglo, crea un nuevo arreglo MAP
+
+    // 1) Enviamos el nuevo valor de la iteracion
+    // 2) Nos devuelve es un NUEVO ARREGLO con los valores modificados
+
+    val respuestaMap: List<Double> = arregloDinamico
+        .map{ valorActual: Int ->
+            return@map valorActual.toDouble() + 100
+        }
+    println(respuestaMap)
+
+    val respuestaMapDos = arregloDinamico.map{ it + 15}
+    //.map { valorActual: Int ->
+//       return@map valorActual + 15
+// }
+    println(respuestaMapDos)
 }
 
 // FUNCIONES
@@ -163,4 +211,5 @@ class Suma( // Constructor Primario Suma
         }
     }
 }
+
 
