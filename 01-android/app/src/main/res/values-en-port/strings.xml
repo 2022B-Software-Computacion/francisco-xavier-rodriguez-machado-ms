@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hola_mundo"> Hello World Portraits C2</string>
+    <string name="Hola_mundo"> Hello World Portrait C2</string>
     <color name="textoColor">#DC1616</color>
     <color name="fondo">#03A9F4</color>
 </resources>
