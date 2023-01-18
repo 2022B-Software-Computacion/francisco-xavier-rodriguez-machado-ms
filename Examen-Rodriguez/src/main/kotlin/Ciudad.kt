@@ -119,10 +119,8 @@ class Ciudad() {
                     val indexCiudad = listarCiudades.indexOf(encontrarCiudad)
                     println("Informacón de la Ciudad "+"\n")
                     println("1. Nombre de la Ciudad: "+encontrarCiudad.nombreCiudad)
-                   // println("2. Id: "+encontrarCiudad.idCiudad)
-                    println("3. Número de Habitantes: "+encontrarCiudad.numeroHabitantes)
-                   // println("4. Fecha de fundación: "+encontrarCiudad.fechaDeFundacion)
-                    println("5. Fiestas Patronales: "+encontrarCiudad.fiestasPatronales)
+                    println("2. Número de Habitantes: "+encontrarCiudad.numeroHabitantes)
+                    println("3. Fiestas Patronales: "+encontrarCiudad.fiestasPatronales)
                     println("Seleccione la información deseas actualizar: ")
                     when (readLine()!!.toInt()){
                         1 -> {
