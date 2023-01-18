@@ -35,7 +35,7 @@ class Provincia {
         println("Ingresé el nombre de la nueva Provincia:")
         val nombreProvincia = readLine()!!
         val id = idProvincias.nextInt()
-        println("Ingresé el grado de seguridad de la Provincia, de 1.0 a 5.0:")
+        println("Ingresé el grado de seguridad de la Provincia, de (0.0-5.0):")
         val gradoDeSeguridad = readLine()!!.toFloat()
         println("Ingresé la fecha de fundación de la Provincia con el formato YYYY-MM-DD:")
         val auxFechaFundacion = readLine()
@@ -117,7 +117,7 @@ class Provincia {
                     val indexProvincia = listarProvincias.indexOf(hallarProvincia)
                     println("Informacón de la Provincia "+"\n")
                     println("1. Nombre del Provincia: "+hallarProvincia.nombreProvincia)
-                    println("2. Grado de Seguridad (0-5): "+hallarProvincia.gradoDeSeguridad)
+                    println("2. Grado de Seguridad (1-5): "+hallarProvincia.gradoDeSeguridad)
                     println("3. Fiestas Provinciales: "+hallarProvincia.fiestasProvinciales)
                     println("Seleccione la información deseas actualizar: ")
                     when (readLine()!!.toInt()){
