@@ -1,0 +1,2 @@
+Provincias: Nombre de la Provincia:Imbabura :Códido de la Provincia:10 :Grado de Seguridad:10.0 :Fecha de Fundación:1824-06-15 :Fiestas Provinciales:false
+Ciudades: Nombre de la Ciudad:Atuntaqui :Código de la ciudad:7 :Número de Habitantes:15000 :Fecha de Fundación:1784-12-12 :Fiestas Patronales:false
