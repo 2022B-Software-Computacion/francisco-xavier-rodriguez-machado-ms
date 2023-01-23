@@ -16,7 +16,8 @@ class Ciudad() {
         var fiestasPatronales: Boolean
     ) {
         override fun toString(): String {
-            return "$nombreCiudad,$idCiudad,$numeroHabitantes,$fechaDeFundacion,$fiestasPatronales"
+            return "Nombre de la ciudad: $nombreCiudad ,ID de la Ciudad: $idCiudad ,Número de Habitantes: $numeroHabitantes ," +
+                    "Fecha de Fundación: $fechaDeFundacion ,Está en Fiestas Patronales: $fiestasPatronales"
         }
     }
 

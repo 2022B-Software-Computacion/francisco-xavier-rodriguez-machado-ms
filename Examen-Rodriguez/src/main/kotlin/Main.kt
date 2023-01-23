@@ -5,7 +5,7 @@ fun main(args: Array<String>) {
             println("CRUD de las Provincias")
             println("1. Crear una Provincia")
             println("2. Listar las Provincias")
-            println("3. Actualizar una Provincia - Ciudad")
+            println("3. Opciones Ciudad - Actualizar una provincia")
             println("4. Eliminar una Provincia")
             println("5. Salir" + "\n")
             println("Ingresé el número de la acción a realizar: ")

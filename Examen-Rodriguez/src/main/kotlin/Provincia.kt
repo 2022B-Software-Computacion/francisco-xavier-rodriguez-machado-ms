@@ -14,7 +14,9 @@ class Provincia {
     ) {
 
         override fun toString(): String {
-            return "$nombreProvincia,$idProvincia,$gradoDeSeguridad,$fechaDeFundacion,$fiestasProvinciales"
+            return "Nombre de la Provincia: $nombreProvincia ,ID de la Provincia: $idProvincia ," +
+                    "Grado de Seguridad: $gradoDeSeguridad ,Fecha de Fundación: $fechaDeFundacion ," +
+                    "Está en fiestas Provinciales: $fiestasProvinciales"
         }
     }
 

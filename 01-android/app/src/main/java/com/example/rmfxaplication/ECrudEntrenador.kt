@@ -10,6 +10,7 @@ class ECrudEntrenador : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ecrud_entrenador)
 
+
         val botonBuscarBDD = findViewById<Button>(R.id.btn_buscar_bdd)
         botonBuscarBDD
             .setOnClickListener {
