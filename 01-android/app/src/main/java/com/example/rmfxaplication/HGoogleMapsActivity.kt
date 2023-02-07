@@ -5,6 +5,7 @@ import android.icu.text.CaseMap.Title
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.PackageManagerCompat
@@ -22,6 +23,10 @@ class HGoogleMapsActivity : AppCompatActivity() {
         solicitarPermiso()
         iniciarLogicaMapa()
         establecerConfiguracionMapa()
+        val boton = findViewById<Button>(R.id.btn_ir_carolina)
+        boton.setOnClickListener {
+            irCarolina()
+        }
     }
 
     fun iniciarLogicaMapa(){
@@ -93,6 +98,13 @@ class HGoogleMapsActivity : AppCompatActivity() {
             uiSettings.isMyLocationButtonEnabled = true // No tenemos aun permisos
         }
     }
+
+    fun irCarolina(){
+        val carolina = LatLng(-0.1825684318436696, -78.4847277600916)
+        val zoom = 17f
+        moverCamaraConZoom(carolina, zoom)
+    }
+
 
     fun escucharListener(){
         mapa.setOnPolygonClickListener {
