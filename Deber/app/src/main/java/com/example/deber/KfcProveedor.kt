@@ -24,11 +24,11 @@ class KfcProveedor {
                 "https://images.getduna.com/2bb258f4-051d-4a46-9321-b0a7a857cd71/d030bcd0f30afb20_domicilio_42997_745x745_1673284833.png?d=300x300&format=webp"
             ),
             KfcLista(
-                "PARTE COMPARTE 2 Y 3 PERSONAS",
+                "PARTE COMPARTE \n 2 Y 3 PERSONAS",
                 "https://images.getduna.com/2bb258f4-051d-4a46-9321-b0a7a857cd71/d030bcd0f30afb20_domicilio_54625_745x745_1673284324.png?d=300x300&format=webp"
             ),
             KfcLista(
-                "SANDUCHES Y TWISTER",
+                "SANDUCHES Y \n TWISTER",
                 "https://images.getduna.com/2bb258f4-051d-4a46-9321-b0a7a857cd71/d030bcd0f30afb20_domicilio_51331_744x744_1646338939.png?d=300x300&format=webp"
             ),
             KfcLista(
@@ -59,8 +59,6 @@ class KfcProveedor {
                 "COMPLEMENTOS Y BEBIDAS",
                 "https://images.getduna.com/2bb258f4-051d-4a46-9321-b0a7a857cd71/d030bcd0f30afb20_domicilio_36586_744x744.png?d=300x300&format=webp"
             ),
-
-
-            )
+        )
     }
 }
