@@ -1,10 +1,12 @@
 package com.example.deber
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.deber.adapter.KfcAdapter
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initRecyclerView()
-        //initRecyclerView2()
+
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        val menu = bottomNavigation.menu
+        val userItem = menu.findItem(R.id.usuario)
+        userItem.setOnMenuItemClickListener {
+            val intent = Intent(this, recyclerView2::class.java)
+            startActivity(intent)
+            true
+        }
+
     }
 
     fun initRecyclerView(){
@@ -20,11 +31,5 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this,2)
         recyclerView.adapter = KfcAdapter(KfcProveedor.kfcLista1)
     }
-
-    /*fun initRecyclerView2(){
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerkfcbatalla)
-        recyclerView.layoutManager = GridLayoutManager(this,2)
-        recyclerView.adapter = KfcAdapter2(KfcProveedor2.kfcLista2)
-    }*/
 
 }
