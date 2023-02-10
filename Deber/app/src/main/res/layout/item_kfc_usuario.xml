@@ -16,8 +16,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivKfcUsuario"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_margin="6dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
@@ -32,9 +32,9 @@
             android:id="@+id/tvKfcTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="30dp"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="17dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivKfcUsuario"

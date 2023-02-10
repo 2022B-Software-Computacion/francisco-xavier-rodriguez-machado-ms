@@ -5,39 +5,39 @@ class KfcUsuarioProveedor {
         val kfcUsuariosLista = listOf<KfcUsuario>(
             KfcUsuario(
                 "Pedidos",
-                "app/res/drawable/ic_tenedores.xml"
+                "https://cdn-icons-png.flaticon.com/128/80/80933.png"
             ),
             KfcUsuario(
                 "Datos de Facturación",
-                "app/res/drawable/ic_perfil.xml"
+                "https://cdn-icons-png.flaticon.com/128/1665/1665644.png"
             ),
             KfcUsuario(
                 "Dirección de entrega",
-                "app/res/drawable/ic_mapa.xml"
+                "https://cdn-icons-png.flaticon.com/128/5616/5616461.png"
             ),
             KfcUsuario(
                 "Notificaciones",
-                "app/res/drawable/ic_notificaciones.xml"
+                "https://cdn-icons-png.flaticon.com/128/1827/1827347.png"
             ),
             KfcUsuario(
                 "Editar Perfil",
-                "app/res/drawable/ic_lapiz.xml"
+                "https://cdn-icons-png.flaticon.com/128/650/650194.png"
             ),
             KfcUsuario(
                 "Permisos de notificación",
-                "app/res/drawable/ic_notificaciones_tachada.xml"
+                "https://cdn-icons-png.flaticon.com/128/3178/3178101.png"
             ),
             KfcUsuario(
                 "Ayuda",
-                "app/res/drawable/ic_ayuda.xml"
+                "https://cdn-icons-png.flaticon.com/128/6932/6932440.png"
             ),
             KfcUsuario(
                 "Términos legales",
-                "app/res/drawable/ic_terminos_legales.xml"
+                "https://cdn-icons-png.flaticon.com/128/8993/8993302.png"
             ),
             KfcUsuario(
                 "Cerrar sesión",
-                "app/res/drawable/ic_cerrar_sesion.xml"
+                "https://cdn-icons-png.flaticon.com/128/2626/2626403.png"
             )
         )
     }
