@@ -1,10 +1,11 @@
 package com.example.rmfxaplication
 
-import android.app.DownloadManager.Query
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -17,19 +18,111 @@ class JFirebaseFirestore : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jfirebase_firestore)
         val listView = findViewById<ListView>(R.id.lv_firestore)
-        val adaptador = ArrayAdapter(
-            this, //Contexto
-        android.R.layout.simple_list_item_1, // como se va a ver
-        arreglo
+        val adaptador: ArrayAdapter<JCitiesDto> = ArrayAdapter(
+            this, // Contexto
+            android.R.layout.simple_list_item_1, // como se va a ver (XML)
+            arreglo
         )
         listView.adapter = adaptador
         adaptador.notifyDataSetChanged()
+        val botonDatosPrueba = findViewById<Button>(R.id.btn_fs_datos_prueba)
+        botonDatosPrueba.setOnClickListener { crearDatosPrueba() }
+
+        val botonOrderBy = findViewById<Button>(R.id.btn_fs_order_by)
+        botonOrderBy.setOnClickListener { consultarConOrderBy(adaptador) }
+
+        val botonObtenerDocumento = findViewById<Button>(
+            R.id.btn_fs_odoc
+        )
+        botonObtenerDocumento.setOnClickListener {
+            consultarDocumento(adaptador)
+        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    fun consultarDocumento(
+        adaptador: ArrayAdapter<JCitiesDto>
+    ){
+        val db = Firebase.firestore
+        val citiesRefUnico = db
+            .collection("cities")
+        // /cities/BJ (1 documento)
+        // /cities/BG/hijo/1/nieto/1.1
+        citiesRefUnico
+            .document("BJ")
+//            .collection("hijo")
+//            .document("1")
+//            .collection("nieto")
+//            .document("1.1")
+            .get()
+            .addOnSuccessListener {
+                it.id // obtener el id de firestore
+                limpiarArreglo()
+                arreglo.add(
+                    JCitiesDto(
+                        it.data?.get("name") as String?,
+                        it.data?.get("state") as String?,
+                        it.data?.get("country") as String?,
+                        it.data?.get("capital") as Boolean?,
+                        it.data?.get("population") as Long?,
+                        it.data?.get("regions") as ArrayList<String>
+                    )
+                )
+                adaptador.notifyDataSetChanged()
+            }
+    }
+
+
+
+
+
+    fun consultarConOrderBy(
+        adaptador: ArrayAdapter<JCitiesDto>
+    ){
+        val db = Firebase.firestore
+        val citiesRefUnico = db
+            .collection("cities")
+        limpiarArreglo()
+        adaptador.notifyDataSetChanged()
+        citiesRefUnico
+            // NO USAMOS CON DOCUMENT xq en DOCUMENT nos devuelve 1
+            //  /cities => "population" ASCENDING
+            .orderBy("population", Query.Direction.ASCENDING)
+            .get() // obtenemos la peticion
+            .addOnSuccessListener {
+                for (ciudad in it) {
+                    ciudad.id
+                    anadirAArregloCiudad(arreglo, ciudad, adaptador)
+                }
+            }
+    }
+
+
+
+
+
+
+
+
+
+
+
     fun crearDatosPrueba(){
         val db = Firebase.firestore // Objeto Firestore
-        val cities = db.collection("cities") // nombre de la colección
-
-        val data1 = hashMapOf(  // Objeto a guardarse
+        val cities = db.collection("cities") // nombre coleccion
+        val data1 = hashMapOf( // Objeto a guardarse
             "name" to "San Francisco",
             "state" to "CA",
             "country" to "USA",
@@ -37,7 +130,8 @@ class JFirebaseFirestore : AppCompatActivity() {
             "population" to 860000,
             "regions" to listOf("west_coast", "norcal")
         )
-        cities.document("SF") // Asigna el ID = "SF"
+        cities
+            .document("SF") // Asigna el ID = "SF"
             .set(data1)
 
         val data2 = hashMapOf(
@@ -79,13 +173,26 @@ class JFirebaseFirestore : AppCompatActivity() {
             "regions" to listOf("jingjinji", "hebei")
         )
         cities.document("BJ").set(data5)
+
+
+
+
+
+
+
+
+
+
+
+
     }
-    fun limpiarArreglo(){arreglo.clear()}
-    fun anadirArregloCiudad(
+    fun limpiarArreglo() { arreglo.clear() }
+    fun anadirAArregloCiudad(
         arregloNuevo: ArrayList<JCitiesDto>,
         ciudad: QueryDocumentSnapshot,
         adaptador: ArrayAdapter<JCitiesDto>
-    ){
+    ) {
+        ciudad.id
         val nuevaCiudad = JCitiesDto(
             ciudad.data.get("name") as String?,
             ciudad.data.get("state") as String?,
@@ -99,4 +206,5 @@ class JFirebaseFirestore : AppCompatActivity() {
         )
         adaptador.notifyDataSetChanged()
     }
+
 }
