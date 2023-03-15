@@ -10,13 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnRestaurant = findViewById<Button>(R.id.btnProvincia)
-        btnRestaurant.setOnClickListener {
+        val btnProvincias = findViewById<Button>(R.id.btnProvincia)
+        btnProvincias.setOnClickListener {
             goActivity(MainProvincia::class.java)
         }
 
-        val btnDish = findViewById<Button>(R.id.btnCiudad)
-        btnDish.setOnClickListener {
+        val btnCiudad = findViewById<Button>(R.id.btnCiudad)
+        btnCiudad.setOnClickListener {
             goActivity(MainCiudad::class.java)
         }
     }

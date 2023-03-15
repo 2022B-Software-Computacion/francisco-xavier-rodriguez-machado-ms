@@ -47,7 +47,6 @@ class MainCiudad : AppCompatActivity() {
                 recyclerView.adapter = adapter
                 adapter.setOnItemClickListener(object : CiudadAdapter.onItemClickListener {
                     override fun onItemClick(position: Int) {
-                        //Toast.makeText(this@RestaurantMain, "Test $position", Toast.LENGTH_SHORT).show()
                         val idCiudad = listaCiudades[position].id
                         Toast.makeText(this@MainCiudad, "Id:   $idCiudad", Toast.LENGTH_SHORT)
                             .show()

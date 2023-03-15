@@ -25,8 +25,8 @@ class CrearCiudad : AppCompatActivity() {
         val etNumeroDeHabitantes = findViewById<EditText>(R.id.etNumeroDeHabitantes)
         val etEstaEnFiestasPatronales = findViewById<EditText>(R.id.etEstaEnFiestasPatronales)
 
-        val btnSaveDish = findViewById<Button>(R.id.btnGuardarCiudad)
-        btnSaveDish.setOnClickListener {
+        val btnGuardarCiudad = findViewById<Button>(R.id.btnGuardarCiudad)
+        btnGuardarCiudad.setOnClickListener {
             if (etNombreCiudad.text.isNotEmpty()
                 && etFechaDeFundacionCiudad.text.isNotEmpty()
                 && etNumeroDeHabitantes.text.isNotEmpty()
@@ -36,20 +36,20 @@ class CrearCiudad : AppCompatActivity() {
                 val resultadoTransformacion = tranformarEstado.toBoolean()
 
                 val tranformarNumHabitantes = etNumeroDeHabitantes.text.toString()
-                val resultadoTransformacionNumHabitantes = tranformarNumHabitantes.toDouble()
+                val resultadoTransformacionNumHabitantes = tranformarNumHabitantes.toInt()
 
                 val data = hashMapOf(
-                    "name" to etNombreCiudad.text.toString(),
-                    "available" to resultadoTransformacion,
-                    "creationDate" to etFechaDeFundacionCiudad.text.toString(),
-                    "price" to resultadoTransformacionNumHabitantes
+                    "nombre" to etNombreCiudad.text.toString(),
+                    "estaEnFiestasPatronales" to resultadoTransformacion,
+                    "fechaDeFundacion" to etFechaDeFundacionCiudad.text.toString(),
+                    "numeroDeHabitantes" to resultadoTransformacionNumHabitantes
                 )
 
                 db.collection("Ciudad").add(data).addOnSuccessListener {
-                    Toast.makeText(this, "Successfully created dish", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Creación éxitosa de la ciudad", Toast.LENGTH_SHORT).show()
                     goActivity(MainProvincia::class.java)
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Error creating a dish", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Se produjo un error al crear la ciudad", Toast.LENGTH_SHORT).show()
                     goActivity(MainProvincia::class.java)
                 }
             }

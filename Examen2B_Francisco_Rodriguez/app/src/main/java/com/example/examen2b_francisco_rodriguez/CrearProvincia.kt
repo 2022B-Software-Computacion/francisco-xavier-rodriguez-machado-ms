@@ -24,32 +24,32 @@ class CrearProvincia : AppCompatActivity() {
         val etGradoDeSeguridad = findViewById<EditText>(R.id.etGradoDeSeguridad)
         val etEstaEnFiestasProvinciales = findViewById<EditText>(R.id.etEstaEnFiestasProvinciales)
 
-        val btnSaveRestaurant = findViewById<Button>(R.id.btnGuardarProvincia)
-        btnSaveRestaurant.setOnClickListener {
+        val btnGuardarProvincias = findViewById<Button>(R.id.btnGuardarProvincia)
+        btnGuardarProvincias.setOnClickListener {
             if (etNombreProvincia.text.isNotEmpty()
                 && etFechaDeFundacion.text.isNotEmpty()
                 && etGradoDeSeguridad.text.isNotEmpty()
                 && etEstaEnFiestasProvinciales.text.isNotEmpty()
             ) {
-                val transformAvailableRestaurant = etEstaEnFiestasProvinciales.text.toString()
-                val resultAvailableRestaurant = transformAvailableRestaurant.toBoolean()
+                val transformacionEstaEnFiestasProvinciales = etEstaEnFiestasProvinciales.text.toString()
+                val resultadoEstaEnFiestasProvinciales = transformacionEstaEnFiestasProvinciales.toBoolean()
 
-                val transformRatingRestaurant = etGradoDeSeguridad.text.toString()
-                val resultRatingRestaurant = transformRatingRestaurant.toDouble()
+                val transformacionGradoDeSeguridad = etGradoDeSeguridad.text.toString()
+                val resultadoGradoDeSeguridadTransformado = transformacionGradoDeSeguridad.toDouble()
 
                 val data = hashMapOf(
-                    "name" to etNombreProvincia.text.toString(),
-                    "available" to resultAvailableRestaurant,
-                    "openingDate" to etFechaDeFundacion.text.toString(),
-                    "rating" to resultRatingRestaurant
+                    "nombre" to etNombreProvincia.text.toString(),
+                    "estaEnFiestasProvinciales" to resultadoEstaEnFiestasProvinciales,
+                    "fechaDeFundacion" to etFechaDeFundacion.text.toString(),
+                    "gradoDeSeguridad" to resultadoGradoDeSeguridadTransformado
                 )
 
                 db.collection("Provincias").add(data).addOnSuccessListener {
-                    Toast.makeText(this, "Successfully created restaurant", Toast.LENGTH_SHORT)
+                    Toast.makeText(this, "Se creó la provincia con éxito", Toast.LENGTH_SHORT)
                         .show()
                     goActivity(MainProvincia::class.java)
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Error creating a restaurant", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Se produjo un error al crear la provincia", Toast.LENGTH_SHORT).show()
                     goActivity(MainProvincia::class.java)
                 }
             }

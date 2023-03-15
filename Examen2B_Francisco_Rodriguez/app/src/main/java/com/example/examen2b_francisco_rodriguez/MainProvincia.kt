@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.examen2b_francisco_rodriguez.adapter.ProvinciaAdapter
@@ -48,12 +46,11 @@ class MainProvincia : AppCompatActivity() {
                 recyclerView.adapter = adapter
                 adapter.setOnItemClickListener(object : ProvinciaAdapter.onItemClickListener {
                     override fun onItemClick(position: Int) {
-                        //Toast.makeText(this@RestaurantMain, "Test $position", Toast.LENGTH_SHORT).show()
                         val idProvincia = listaProvincias[position].id
                         Toast.makeText(this@MainProvincia, "Id:   $idProvincia", Toast.LENGTH_SHORT)
                             .show()
-                        val btnEditRestaurant = findViewById<Button>(R.id.btnEditarProvincia)
-                        btnEditRestaurant.setOnClickListener {
+                        val btnEditarProvincia = findViewById<Button>(R.id.btnEditarProvincia)
+                        btnEditarProvincia.setOnClickListener {
                             sentDataToOtherActiity(ActualizarProvincia::class.java, idProvincia)
                         }
                     }
@@ -64,8 +61,8 @@ class MainProvincia : AppCompatActivity() {
                 Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
             }
 
-        val btnCreateRestaurant = findViewById<Button>(R.id.btnCrearProvincia)
-        btnCreateRestaurant.setOnClickListener {
+        val btnCrearProvincia = findViewById<Button>(R.id.btnCrearProvincia)
+        btnCrearProvincia.setOnClickListener {
             goActivity(CrearProvincia::class.java)
         }
 
