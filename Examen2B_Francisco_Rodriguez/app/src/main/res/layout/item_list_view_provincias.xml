@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTituloNombreProvincia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la provincia:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tvTítuloNombreProvinciaContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pichincha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloNombreProvincia"/>
+        <TextView
+            android:id="@+id/tvTituloGradoDeSeguridadContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grado de Seguridad:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTítuloNombreProvinciaContenido"/>
+        <TextView
+            android:id="@+id/tvTituloFechaFundacionContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloGradoDeSeguridadContenido"/>
+        <TextView
+            android:id="@+id/tvTituloFechaFundacionProvincia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha de fundación"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionContenido"/>
+        <TextView
+            android:id="@+id/tvTituloFechaDeFundacionProvinciaContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1898-06-12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionProvincia"/>
+        <TextView
+            android:id="@+id/tvTituloFiestasProvinciales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se encuentra en fiestas provinciales:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaDeFundacionProvinciaContenido"/>
+        <TextView
+            android:id="@+id/tvTituloEstaEnFiestasProvincialesContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloFiestasProvinciales"/>
+
+        <Button
+            android:id="@+id/btnEditarProvincia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloEstaEnFiestasProvincialesContenido"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="64dp"/>
+
+        <Button
+            android:id="@+id/btnEliminarProvincia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloEstaEnFiestasProvincialesContenido"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="64dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

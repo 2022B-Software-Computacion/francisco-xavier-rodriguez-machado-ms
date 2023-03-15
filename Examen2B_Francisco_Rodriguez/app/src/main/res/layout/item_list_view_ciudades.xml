@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTituloNombreCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la ciudad:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tvTítuloNombreCiudadContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quito"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloNombreCiudad"/>
+        <TextView
+            android:id="@+id/tvTituloNumeroHabitantes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Número de habitantes:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTítuloNombreCiudadContenido"/>
+        <TextView
+            android:id="@+id/tvTituloNumeroHabitantesContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloNumeroHabitantes"/>
+        <TextView
+            android:id="@+id/tvTituloFechaFundacionCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha de fundación:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloNumeroHabitantesContenido"/>
+        <TextView
+            android:id="@+id/tvTituloFechaFundacionCiudadContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1898-10-19"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionCiudad"/>
+        <TextView
+            android:id="@+id/tvTituloEstaEnFiestasPatronales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fiestas patronales:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionCiudadContenido"/>
+        <TextView
+            android:id="@+id/tvTituloEstaEnFiestasPatronalesContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloEstaEnFiestasPatronales"/>
+
+        <Button
+            android:id="@+id/btnEditarCiudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloEstaEnFiestasPatronalesContenido"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="64dp"/>
+
+        <Button
+            android:id="@+id/btnEliminarCiudad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloEstaEnFiestasPatronalesContenido"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="64dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
