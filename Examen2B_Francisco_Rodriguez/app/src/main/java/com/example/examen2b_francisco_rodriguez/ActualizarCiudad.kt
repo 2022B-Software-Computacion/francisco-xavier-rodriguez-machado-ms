@@ -10,7 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-class ActualizarCiudad : AppCompatActivity(){
+class ActualizarCiudad : AppCompatActivity() {
 
     private var db = Firebase.firestore
 
@@ -25,9 +25,12 @@ class ActualizarCiudad : AppCompatActivity(){
         var docRef = idCiudad?.let { db.collection("ciudades").document(it) }
 
         val etNombreCiudadActualizada = findViewById<EditText>(R.id.etNombreCiudadActualizada)
-        val etFechaDeFundacionCiudadActualizada  = findViewById<EditText>(R.id.etFechaDeFundacionCiudadActualizada )
-        val etNumeroDeHabitantesActualizado  = findViewById<EditText>(R.id.etNumeroDeHabitantesActualizado )
-        val etEstaEnFiestasPatronalesActualizada  = findViewById<EditText>(R.id.etEstaEnFiestasPatronalesActualizada)
+        val etFechaDeFundacionCiudadActualizada =
+            findViewById<EditText>(R.id.etFechaDeFundacionCiudadActualizada)
+        val etNumeroDeHabitantesActualizado =
+            findViewById<EditText>(R.id.etNumeroDeHabitantesActualizado)
+        val etEstaEnFiestasPatronalesActualizada =
+            findViewById<EditText>(R.id.etEstaEnFiestasPatronalesActualizada)
         val btnActualizarCiudad = findViewById<Button>(R.id.btnActualizarCiudad)
 
         if (docRef != null) {
@@ -35,7 +38,8 @@ class ActualizarCiudad : AppCompatActivity(){
                 if (documentSnapshot.exists()) {
                     // Access the DocumentSnapshot data here.
                     val nombre = documentSnapshot.getString("nombre")
-                    val AuxEstaEnFiestasPatronales = documentSnapshot.getBoolean("estaEnfiestasPatronales")
+                    val AuxEstaEnFiestasPatronales =
+                        documentSnapshot.getBoolean("estaEnfiestasPatronales")
                     val estaEnfiestasPatronales = AuxEstaEnFiestasPatronales.toString()
                     val fechaDeFundacion = documentSnapshot.getString("fechaDeFundacion")
                     val AuxnumeroHabitantes = documentSnapshot.getDouble("numeroHabitantes")
@@ -54,13 +58,18 @@ class ActualizarCiudad : AppCompatActivity(){
             if (etNombreCiudadActualizada.text.isNotEmpty()
                 && etFechaDeFundacionCiudadActualizada.text.isNotEmpty()
                 && etNumeroDeHabitantesActualizado.text.isNotEmpty()
-                && etEstaEnFiestasPatronalesActualizada.text.isNotEmpty()){
+                && etEstaEnFiestasPatronalesActualizada.text.isNotEmpty()
+            ) {
 
-                val tranformacionEstaEnfiestasPatronales = etEstaEnFiestasPatronalesActualizada.text.toString()
-                val resultadoEstaEnfiestasPatronales = tranformacionEstaEnfiestasPatronales.toBoolean()
+                val tranformacionEstaEnfiestasPatronales =
+                    etEstaEnFiestasPatronalesActualizada.text.toString()
+                val resultadoEstaEnfiestasPatronales =
+                    tranformacionEstaEnfiestasPatronales.toBoolean()
 
-                val tranformacionNumeroDeHabitantesActualizado = etNumeroDeHabitantesActualizado.text.toString()
-                val resultadoNumeroDeHabitantesActualizado = tranformacionNumeroDeHabitantesActualizado.toInt()
+                val tranformacionNumeroDeHabitantesActualizado =
+                    etNumeroDeHabitantesActualizado.text.toString()
+                val resultadoNumeroDeHabitantesActualizado =
+                    tranformacionNumeroDeHabitantesActualizado.toInt()
 
                 val data = hashMapOf(
                     "nombre" to etNombreCiudadActualizada.text.toString(),
@@ -70,12 +79,20 @@ class ActualizarCiudad : AppCompatActivity(){
                 )
 
                 if (idCiudad != null) {
-                    db.collection("ciudades").document(idCiudad).update(data as Map<String, Any>).
-                    addOnSuccessListener {
-                        Toast.makeText(this, "Actualización de la ciudad Exitosa!!", Toast.LENGTH_SHORT).show()
-                        irActividad(MainCiudad::class.java)
-                    }.addOnFailureListener {
-                        Toast.makeText(this, "Se produjo un error al actualizar la ciudad", Toast.LENGTH_SHORT).show()
+                    db.collection("ciudades").document(idCiudad).update(data as Map<String, Any>)
+                        .addOnSuccessListener {
+                            Toast.makeText(
+                                this,
+                                "Actualización de la ciudad Exitosa!!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            irActividad(MainCiudad::class.java)
+                        }.addOnFailureListener {
+                        Toast.makeText(
+                            this,
+                            "Se produjo un error al actualizar la ciudad",
+                            Toast.LENGTH_SHORT
+                        ).show()
                         irActividad(MainCiudad::class.java)
                     }
                 }
@@ -83,7 +100,7 @@ class ActualizarCiudad : AppCompatActivity(){
         }
     }
 
-    private fun irActividad(activity: Class<*>){
+    private fun irActividad(activity: Class<*>) {
         val intent = Intent(this, activity)
         startActivity(intent)
     }

@@ -69,12 +69,12 @@ class MainCiudad : AppCompatActivity() {
         }
     }
 
-    private fun irActividad(activity: Class<*>){
+    private fun irActividad(activity: Class<*>) {
         val intent = Intent(this, activity)
         startActivity(intent)
     }
 
-    private fun enviarDatosOtraActividad(activity: Class<*>, id: String){
+    private fun enviarDatosOtraActividad(activity: Class<*>, id: String) {
         val intent = Intent(this, activity)
         intent.putExtra("id", id)
         startActivity(intent)

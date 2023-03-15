@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       FirebaseApp.initializeApp(this);
+        FirebaseApp.initializeApp(this);
 
 
         val btnProvincias = findViewById<Button>(R.id.btnProvincia)
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun irActividad(activity: Class<*>){
+    private fun irActividad(activity: Class<*>) {
         val intent = Intent(this, activity)
         startActivity(intent)
     }

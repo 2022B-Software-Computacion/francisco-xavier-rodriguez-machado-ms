@@ -66,7 +66,7 @@ class ProvinciaAdapter(private val listaProvincias: ArrayList<Provincia>) :
             val db = FirebaseFirestore.getInstance()
             val activity = it.context as AppCompatActivity
             val builder = AlertDialog.Builder(activity)
-            builder.setTitle("Borrar")
+            builder.setTitle("Eliminar")
             builder.setMessage("¿Está seguro de eliminar la provincia?")
             builder.setPositiveButton("Si") { dialogInterface, i: Int ->
                 val eliminarItem = db.collection("provincias").document(item.id)

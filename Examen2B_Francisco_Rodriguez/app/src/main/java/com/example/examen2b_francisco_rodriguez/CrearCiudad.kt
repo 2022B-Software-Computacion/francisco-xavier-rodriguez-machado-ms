@@ -49,14 +49,18 @@ class CrearCiudad : AppCompatActivity() {
                     Toast.makeText(this, "Creación éxitosa de la ciudad", Toast.LENGTH_SHORT).show()
                     irActividad(MainProvincia::class.java)
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Se produjo un error al crear la ciudad", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Se produjo un error al crear la ciudad",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     irActividad(MainProvincia::class.java)
                 }
             }
         }
     }
 
-    private fun irActividad(activity: Class<*>){
+    private fun irActividad(activity: Class<*>) {
         val intent = Intent(this, activity)
         startActivity(intent)
     }

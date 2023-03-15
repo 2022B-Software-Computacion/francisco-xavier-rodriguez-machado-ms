@@ -31,7 +31,8 @@ class CiudadAdapter(private val listaCiudades: ArrayList<Ciudad>) :
         val nombreCiudad: TextView = itemView.findViewById(R.id.tvTítuloNombreCiudadContenido)
         val numeroHabitantes: TextView =
             itemView.findViewById(R.id.tvTituloNumeroHabitantesContenido)
-        val fechaDeFundacion: TextView = itemView.findViewById(R.id.tvTituloFechaFundacionCiudadContenido)
+        val fechaDeFundacion: TextView =
+            itemView.findViewById(R.id.tvTituloFechaFundacionCiudadContenido)
         val estaEnFiestasPatronales: TextView =
             itemView.findViewById(R.id.tvTituloEstaEnFiestasPatronalesContenido)
         val btnEliminarCiudad: Button = itemView.findViewById(R.id.btnEliminarCiudad)
@@ -41,7 +42,6 @@ class CiudadAdapter(private val listaCiudades: ArrayList<Ciudad>) :
                 listener.onItemClick(adapterPosition)
             }
         }
-
     }
 
     override fun onCreateViewHolder(
@@ -69,15 +69,15 @@ class CiudadAdapter(private val listaCiudades: ArrayList<Ciudad>) :
             val db = FirebaseFirestore.getInstance()
             val activity = it.context as AppCompatActivity
             val builder = AlertDialog.Builder(activity)
-            builder.setTitle("Borrar")
-            builder.setMessage("¿Está seguro de borrar la ciudad?")
+            builder.setTitle("Eliminar")
+            builder.setMessage("¿Está seguro de eliminar la ciudad?")
             builder.setPositiveButton("Si") { dialogInterface, i: Int ->
                 val borrarItem = db.collection("ciudades").document(item.id)
                 println(item.id)
                 db.runBatch { batch ->
                     batch.delete(borrarItem)
                 }.addOnCompleteListener {
-                    Toast.makeText(activity, "Se borro exitosamente la ciudad", Toast.LENGTH_SHORT)
+                    Toast.makeText(activity, "La ciudad se eliminó con éxito", Toast.LENGTH_SHORT)
                         .show()
                     listaCiudades.removeAt(position)
                     notifyDataSetChanged()

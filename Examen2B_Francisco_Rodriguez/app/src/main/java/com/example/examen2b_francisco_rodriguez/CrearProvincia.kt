@@ -31,11 +31,14 @@ class CrearProvincia : AppCompatActivity() {
                 && etGradoDeSeguridad.text.isNotEmpty()
                 && etEstaEnFiestasProvinciales.text.isNotEmpty()
             ) {
-                val transformacionEstaEnFiestasProvinciales = etEstaEnFiestasProvinciales.text.toString()
-                val resultadoEstaEnFiestasProvinciales = transformacionEstaEnFiestasProvinciales.toBoolean()
+                val transformacionEstaEnFiestasProvinciales =
+                    etEstaEnFiestasProvinciales.text.toString()
+                val resultadoEstaEnFiestasProvinciales =
+                    transformacionEstaEnFiestasProvinciales.toBoolean()
 
                 val transformacionGradoDeSeguridad = etGradoDeSeguridad.text.toString()
-                val resultadoGradoDeSeguridadTransformado = transformacionGradoDeSeguridad.toDouble()
+                val resultadoGradoDeSeguridadTransformado =
+                    transformacionGradoDeSeguridad.toDouble()
 
                 val data = hashMapOf(
                     "nombre" to etNombreProvincia.text.toString(),
@@ -49,14 +52,18 @@ class CrearProvincia : AppCompatActivity() {
                         .show()
                     irActividad(MainProvincia::class.java)
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Se produjo un error al crear la provincia", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Se produjo un error al crear la provincia",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     irActividad(MainProvincia::class.java)
                 }
             }
         }
     }
 
-    private fun irActividad(activity: Class<*>){
+    private fun irActividad(activity: Class<*>) {
         val intent = Intent(this, activity)
         startActivity(intent)
     }
