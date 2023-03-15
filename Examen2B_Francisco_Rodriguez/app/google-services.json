@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "860209482085",
+    "project_id": "examen-2b-d6dbb",
+    "storage_bucket": "examen-2b-d6dbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860209482085:android:d407b6b8464d045b0a398c",
+        "android_client_info": {
+          "package_name": "com.example.examen2b_francisco_rodriguez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860209482085-gal2sm3sm245g6rk8jqckelqu0o121tb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4NKhiGktRb1PeDqpLXQt21wOlX5QJ1kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860209482085-gal2sm3sm245g6rk8jqckelqu0o121tb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

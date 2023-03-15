@@ -14,7 +14,8 @@
         android:layout_marginTop="30dp"
         android:text="Ciudades"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="30sp"
+        android:textColor="#282BC1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

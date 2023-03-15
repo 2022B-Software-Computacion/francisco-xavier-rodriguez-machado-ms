@@ -14,6 +14,24 @@
         android:theme="@style/Theme.Examen2B_Francisco_Rodriguez"
         tools:targetApi="31">
         <activity
+            android:name=".ActualizarCiudad"
+            android:exported="false" />
+        <activity
+            android:name=".CrearCiudad"
+            android:exported="false" />
+        <activity
+            android:name=".ActualizarProvincia"
+            android:exported="false" />
+        <activity
+            android:name=".CrearProvincia"
+            android:exported="false" />
+        <activity
+            android:name=".MainCiudad"
+            android:exported="false" />
+        <activity
+            android:name=".MainProvincia"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

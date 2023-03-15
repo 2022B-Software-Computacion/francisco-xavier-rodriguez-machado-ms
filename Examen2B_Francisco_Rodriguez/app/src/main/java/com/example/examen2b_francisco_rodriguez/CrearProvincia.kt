@@ -44,19 +44,19 @@ class CrearProvincia : AppCompatActivity() {
                     "gradoDeSeguridad" to resultadoGradoDeSeguridadTransformado
                 )
 
-                db.collection("Provincias").add(data).addOnSuccessListener {
+                db.collection("provincias").add(data).addOnSuccessListener {
                     Toast.makeText(this, "Se creó la provincia con éxito", Toast.LENGTH_SHORT)
                         .show()
-                    goActivity(MainProvincia::class.java)
+                    irActividad(MainProvincia::class.java)
                 }.addOnFailureListener {
                     Toast.makeText(this, "Se produjo un error al crear la provincia", Toast.LENGTH_SHORT).show()
-                    goActivity(MainProvincia::class.java)
+                    irActividad(MainProvincia::class.java)
                 }
             }
         }
     }
 
-    private fun goActivity(activity: Class<*>) {
+    private fun irActividad(activity: Class<*>){
         val intent = Intent(this, activity)
         startActivity(intent)
     }

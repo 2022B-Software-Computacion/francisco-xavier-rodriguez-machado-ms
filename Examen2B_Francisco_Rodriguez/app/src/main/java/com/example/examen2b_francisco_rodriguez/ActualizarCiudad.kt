@@ -22,7 +22,7 @@ class ActualizarCiudad : AppCompatActivity(){
         val bundle = intent.extras
         val idCiudad = bundle?.getString("id")
 
-        var docRef = idCiudad?.let { db.collection("Ciudad").document(it) }
+        var docRef = idCiudad?.let { db.collection("ciudades").document(it) }
 
         val etNombreCiudadActualizada = findViewById<EditText>(R.id.etNombreCiudadActualizada)
         val etFechaDeFundacionCiudadActualizada  = findViewById<EditText>(R.id.etFechaDeFundacionCiudadActualizada )
@@ -70,20 +70,20 @@ class ActualizarCiudad : AppCompatActivity(){
                 )
 
                 if (idCiudad != null) {
-                    db.collection("Ciudad").document(idCiudad).update(data as Map<String, Any>).
+                    db.collection("ciudades").document(idCiudad).update(data as Map<String, Any>).
                     addOnSuccessListener {
                         Toast.makeText(this, "Actualización de la ciudad Exitosa!!", Toast.LENGTH_SHORT).show()
-                        goActivity(MainCiudad::class.java)
+                        irActividad(MainCiudad::class.java)
                     }.addOnFailureListener {
                         Toast.makeText(this, "Se produjo un error al actualizar la ciudad", Toast.LENGTH_SHORT).show()
-                        goActivity(MainCiudad::class.java)
+                        irActividad(MainCiudad::class.java)
                     }
                 }
             }
         }
     }
 
-    private fun goActivity(activity: Class<*>){
+    private fun irActividad(activity: Class<*>){
         val intent = Intent(this, activity)
         startActivity(intent)
     }

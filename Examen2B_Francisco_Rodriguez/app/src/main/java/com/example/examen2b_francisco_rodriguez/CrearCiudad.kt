@@ -45,18 +45,18 @@ class CrearCiudad : AppCompatActivity() {
                     "numeroDeHabitantes" to resultadoTransformacionNumHabitantes
                 )
 
-                db.collection("Ciudad").add(data).addOnSuccessListener {
+                db.collection("ciudades").add(data).addOnSuccessListener {
                     Toast.makeText(this, "Creación éxitosa de la ciudad", Toast.LENGTH_SHORT).show()
-                    goActivity(MainProvincia::class.java)
+                    irActividad(MainProvincia::class.java)
                 }.addOnFailureListener {
                     Toast.makeText(this, "Se produjo un error al crear la ciudad", Toast.LENGTH_SHORT).show()
-                    goActivity(MainProvincia::class.java)
+                    irActividad(MainProvincia::class.java)
                 }
             }
         }
     }
 
-    private fun goActivity(activity: Class<*>) {
+    private fun irActividad(activity: Class<*>){
         val intent = Intent(this, activity)
         startActivity(intent)
     }

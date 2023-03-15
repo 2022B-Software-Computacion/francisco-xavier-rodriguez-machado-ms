@@ -13,7 +13,7 @@
         android:layout_marginTop="8dp"
         android:text="Crear provincia"
         android:textStyle="bold"
-        android:textSize="18sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -51,7 +51,7 @@
         android:id="@+id/etEstaEnFiestasProvinciales"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Available"
+        android:hint="Esta en fiestas proviciales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etGradoDeSeguridad"/>
 

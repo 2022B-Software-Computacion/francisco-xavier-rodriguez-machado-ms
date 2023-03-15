@@ -31,7 +31,7 @@ class MainProvincia : AppCompatActivity() {
 
         db = FirebaseFirestore.getInstance()
 
-        db.collection("Provincias").get().addOnSuccessListener {
+        db.collection("provincias").get().addOnSuccessListener {
             if (!it.isEmpty) {
                 for (document in it.documents) {
                     val itemProvincia: Provincia? = document.toObject(Provincia::class.java)
@@ -51,7 +51,7 @@ class MainProvincia : AppCompatActivity() {
                             .show()
                         val btnEditarProvincia = findViewById<Button>(R.id.btnEditarProvincia)
                         btnEditarProvincia.setOnClickListener {
-                            sentDataToOtherActiity(ActualizarProvincia::class.java, idProvincia)
+                            enviarDatosOtraActividad(ActualizarProvincia::class.java, idProvincia)
                         }
                     }
                 })
@@ -63,17 +63,17 @@ class MainProvincia : AppCompatActivity() {
 
         val btnCrearProvincia = findViewById<Button>(R.id.btnCrearProvincia)
         btnCrearProvincia.setOnClickListener {
-            goActivity(CrearProvincia::class.java)
+            irActividad(CrearProvincia::class.java)
         }
 
     }
 
-    private fun goActivity(activity: Class<*>) {
+    private fun irActividad(activity: Class<*>){
         val intent = Intent(this, activity)
         startActivity(intent)
     }
 
-    private fun sentDataToOtherActiity(activity: Class<*>, id: String) {
+    private fun enviarDatosOtraActividad(activity: Class<*>, id: String){
         val intent = Intent(this, activity)
         intent.putExtra("id", id)
         startActivity(intent)

@@ -33,7 +33,7 @@ class MainCiudad : AppCompatActivity() {
 
         db = FirebaseFirestore.getInstance()
 
-        db.collection("Ciudad").get().addOnSuccessListener {
+        db.collection("ciudades").get().addOnSuccessListener {
             if (!it.isEmpty) {
                 for (document in it.documents) {
                     val itemCiudad: Ciudad? = document.toObject(Ciudad::class.java)
@@ -52,7 +52,7 @@ class MainCiudad : AppCompatActivity() {
                             .show()
                         val btnEditarCiudad = findViewById<Button>(R.id.btnEditarCiudad)
                         btnEditarCiudad.setOnClickListener {
-                            sentDataToOtherActiity(ActualizarCiudad::class.java, idCiudad)
+                            enviarDatosOtraActividad(ActualizarCiudad::class.java, idCiudad)
                         }
                     }
                 })
@@ -65,16 +65,16 @@ class MainCiudad : AppCompatActivity() {
 
         val btnCrearCiudad = findViewById<Button>(R.id.btnCrearCiudad)
         btnCrearCiudad.setOnClickListener {
-            goActivity(CrearCiudad::class.java)
+            irActividad(CrearCiudad::class.java)
         }
     }
 
-    private fun goActivity(activity: Class<*>) {
+    private fun irActividad(activity: Class<*>){
         val intent = Intent(this, activity)
         startActivity(intent)
     }
 
-    private fun sentDataToOtherActiity(activity: Class<*>, id: String) {
+    private fun enviarDatosOtraActividad(activity: Class<*>, id: String){
         val intent = Intent(this, activity)
         intent.putExtra("id", id)
         startActivity(intent)

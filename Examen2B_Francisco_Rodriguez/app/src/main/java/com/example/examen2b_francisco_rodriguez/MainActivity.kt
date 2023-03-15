@@ -4,24 +4,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.firebase.FirebaseApp
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+       FirebaseApp.initializeApp(this);
+
 
         val btnProvincias = findViewById<Button>(R.id.btnProvincia)
         btnProvincias.setOnClickListener {
-            goActivity(MainProvincia::class.java)
+            irActividad(MainProvincia::class.java)
         }
 
         val btnCiudad = findViewById<Button>(R.id.btnCiudad)
         btnCiudad.setOnClickListener {
-            goActivity(MainCiudad::class.java)
+            irActividad(MainCiudad::class.java)
         }
     }
 
-    private fun goActivity(activity: Class<*>) {
+    private fun irActividad(activity: Class<*>){
         val intent = Intent(this, activity)
         startActivity(intent)
     }

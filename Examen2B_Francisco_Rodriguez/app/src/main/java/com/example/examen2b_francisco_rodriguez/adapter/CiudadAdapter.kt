@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class CiudadAdapter(private val listaCiudades: ArrayList<Ciudad>) :
     RecyclerView.Adapter<CiudadAdapter.CiudadViewHolder>() {
 
-    private lateinit var mListener: CiudadAdapter.onItemClickListener
+    private lateinit var mListener: onItemClickListener
 
     interface onItemClickListener {
         fun onItemClick(position: Int)
@@ -47,17 +47,17 @@ class CiudadAdapter(private val listaCiudades: ArrayList<Ciudad>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): CiudadAdapter.CiudadViewHolder {
+    ): CiudadViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.item_list_view_ciudades,
             parent, false
         )
-        return CiudadAdapter.CiudadViewHolder(itemView, mListener)
+        return CiudadViewHolder(itemView, mListener)
     }
 
     override fun getItemCount(): Int = listaCiudades.size
 
-    override fun onBindViewHolder(holder: CiudadAdapter.CiudadViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CiudadViewHolder, position: Int) {
         val item = listaCiudades[position]
         holder.nombreCiudad.text = listaCiudades[position].nombre
         holder.numeroHabitantes.text = listaCiudades[position].numeroDeHabitantes.toString()
@@ -72,7 +72,7 @@ class CiudadAdapter(private val listaCiudades: ArrayList<Ciudad>) :
             builder.setTitle("Borrar")
             builder.setMessage("¿Está seguro de borrar la ciudad?")
             builder.setPositiveButton("Si") { dialogInterface, i: Int ->
-                val borrarItem = db.collection("Ciudad").document(item.id)
+                val borrarItem = db.collection("ciudades").document(item.id)
                 println(item.id)
                 db.runBatch { batch ->
                     batch.delete(borrarItem)

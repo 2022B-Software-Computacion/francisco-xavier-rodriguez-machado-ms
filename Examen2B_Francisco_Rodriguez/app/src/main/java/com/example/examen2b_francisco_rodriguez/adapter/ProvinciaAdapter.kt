@@ -69,7 +69,7 @@ class ProvinciaAdapter(private val listaProvincias: ArrayList<Provincia>) :
             builder.setTitle("Borrar")
             builder.setMessage("¿Está seguro de eliminar la provincia?")
             builder.setPositiveButton("Si") { dialogInterface, i: Int ->
-                val eliminarItem = db.collection("Provincias").document(item.id)
+                val eliminarItem = db.collection("provincias").document(item.id)
                 println(item.id)
                 db.runBatch { batch ->
                     batch.delete(eliminarItem)

@@ -21,8 +21,7 @@ class ActualizarProvincia : AppCompatActivity() {
 
         val bundle = intent.extras
         val idProvincia = bundle?.getString("id")
-        //Toast.makeText(this, "Id:   $idProvincia", Toast.LENGTH_SHORT).show()
-        var docRef = idProvincia?.let { db.collection("Provincia").document(it) }
+        var docRef = idProvincia?.let { db.collection("provincias").document(it) }
 
         val etNombreProvinciaActualizada = findViewById<EditText>(R.id.etNombreProvinciaActualizada)
         val etFechaDeFundacionProvinciaActualizada  = findViewById<EditText>(R.id.etFechaDeFundacionProvinciaActualizada )
@@ -37,7 +36,7 @@ class ActualizarProvincia : AppCompatActivity() {
                     val nombre = documentSnapshot.getString("nombre")
                     val AuxestaEnFiestasProvinciales = documentSnapshot.getBoolean("estaEnFiestasProvinciales")
                     val estaEnFiestasProvinciales = AuxestaEnFiestasProvinciales.toString()
-                    val fechaDeFundacionProvincia = documentSnapshot.getString("fechaDeFundacionProvincia")
+                    val fechaDeFundacionProvincia = documentSnapshot.getString("fechaDeFundacion")
                     val AuxgradoDeSeguridad = documentSnapshot.getDouble("gradoDeSeguridad")
                     val gradoDeSeguridad = AuxgradoDeSeguridad.toString()
 
@@ -70,20 +69,20 @@ class ActualizarProvincia : AppCompatActivity() {
                 )
 
                 if (idProvincia != null) {
-                    db.collection("Provincias").document(idProvincia).update(data as Map<String, Any>).
+                    db.collection("provincias").document(idProvincia).update(data as Map<String, Any>).
                     addOnSuccessListener {
                         Toast.makeText(this, "Actualización de la provincia Exitosa!!", Toast.LENGTH_SHORT).show()
-                        goActivity(MainProvincia::class.java)
+                        irActividad(MainProvincia::class.java)
                     }.addOnFailureListener {
                         Toast.makeText(this, "Se produjo un error al actualizar la provincia", Toast.LENGTH_SHORT).show()
-                        goActivity(MainProvincia::class.java)
+                        irActividad(MainProvincia::class.java)
                     }
                 }
             }
         }
     }
 
-    private fun goActivity(activity: Class<*>){
+    private fun irActividad(activity: Class<*>){
         val intent = Intent(this, activity)
         startActivity(intent)
     }
