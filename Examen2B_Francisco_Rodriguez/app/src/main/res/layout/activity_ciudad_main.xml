@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainCiudad">
+    tools:context=".MainCiudad"
+    android:background="#B0BFA9">
 
     <TextView
         android:id="@+id/tvTitleDish"

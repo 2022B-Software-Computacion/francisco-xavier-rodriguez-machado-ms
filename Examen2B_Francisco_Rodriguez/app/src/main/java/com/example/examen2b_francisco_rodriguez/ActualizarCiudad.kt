@@ -39,17 +39,17 @@ class ActualizarCiudad : AppCompatActivity() {
                     // Access the DocumentSnapshot data here.
                     val nombre = documentSnapshot.getString("nombre")
                     val AuxEstaEnFiestasPatronales =
-                        documentSnapshot.getBoolean("estaEnfiestasPatronales")
-                    val estaEnfiestasPatronales = AuxEstaEnFiestasPatronales.toString()
+                        documentSnapshot.getBoolean("estaEnFiestasPatronales")
+                    val estaEnFiestasPatronales = AuxEstaEnFiestasPatronales.toString()
                     val fechaDeFundacion = documentSnapshot.getString("fechaDeFundacion")
-                    val AuxnumeroHabitantes = documentSnapshot.getDouble("numeroHabitantes")
-                    val numeroHabitantes = AuxnumeroHabitantes.toString()
+                    val AuxnumeroDeHabitantes = documentSnapshot.getDouble("numeroDeHabitantes")
+                    val numeroDeHabitantes = AuxnumeroDeHabitantes.toString()
 
 
                     etNombreCiudadActualizada.setText(nombre)
                     etFechaDeFundacionCiudadActualizada.setText(fechaDeFundacion)
-                    etNumeroDeHabitantesActualizado.setText(numeroHabitantes)
-                    etEstaEnFiestasPatronalesActualizada.setText(estaEnfiestasPatronales)
+                    etNumeroDeHabitantesActualizado.setText(numeroDeHabitantes)
+                    etEstaEnFiestasPatronalesActualizada.setText(estaEnFiestasPatronales)
                 }
             }
         }
@@ -73,9 +73,9 @@ class ActualizarCiudad : AppCompatActivity() {
 
                 val data = hashMapOf(
                     "nombre" to etNombreCiudadActualizada.text.toString(),
-                    "estaEnfiestasPatronales" to resultadoEstaEnfiestasPatronales,
+                    "estaEnFiestasPatronales" to resultadoEstaEnfiestasPatronales,
                     "fechaDeFundacion" to etFechaDeFundacionCiudadActualizada.text.toString(),
-                    "numeroHabitantes" to resultadoNumeroDeHabitantesActualizado
+                    "numeroDeHabitantes" to resultadoNumeroDeHabitantesActualizado
                 )
 
                 if (idCiudad != null) {

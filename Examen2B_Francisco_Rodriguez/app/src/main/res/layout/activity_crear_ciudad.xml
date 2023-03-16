@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrearCiudad">
+    tools:context=".CrearCiudad"
+    android:background="#B0BFA9">
 
     <TextView
         android:id="@+id/tvCrearTitulo"
@@ -15,6 +16,7 @@
         android:text="Crear ciudad"
         android:textStyle="bold"
         android:textSize="30sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -25,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/tvCrearTitulo"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"/>
@@ -34,6 +37,7 @@
         android:id="@+id/etFechaDeFundacionCiudad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombreCiudad"
         android:hint="Fecha de fundación"/>
@@ -45,6 +49,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etFechaDeFundacionCiudad"
+        android:textAlignment="center"
         android:hint="Número de habitantes"/>
 
     <EditText
@@ -52,6 +57,7 @@
         android:id="@+id/etEstaEnFiestasPatronales"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:hint="Esta en fiestas patronales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNumeroDeHabitantes"/>

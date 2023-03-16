@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActualizarProvincia">
+    tools:context=".ActualizarProvincia"
+    android:background="#B0BFA9">
 
     ]<TextView
     android:id="@+id/tvTituloActualizacionProvincia"
@@ -26,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/tvTituloActualizacionProvincia"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"/>
@@ -36,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@+id/etNombreProvinciaActualizada"
         android:hint="Fecha de fundación"/>
 
@@ -44,6 +47,7 @@
         android:id="@+id/etGradoDeSeguridadActualizado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etFechaDeFundacionProvinciaActualizada"
         android:hint="Grado de seguridad"/>
@@ -54,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Esta en fiestas provinciales"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etGradoDeSeguridadActualizado"/>
 

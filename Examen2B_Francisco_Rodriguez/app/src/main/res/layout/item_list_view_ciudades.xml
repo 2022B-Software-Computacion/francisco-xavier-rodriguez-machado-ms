@@ -18,9 +18,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Nombre de la ciudad:"
+            android:text="Nombre de la ciudad"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Quito"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloNombreCiudad" />
 
@@ -36,7 +38,8 @@
             android:id="@+id/tvTituloNumeroHabitantes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Número de habitantes:"
+            android:text="Número de habitantes"
+            android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="3000000"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloNumeroHabitantes" />
 
@@ -54,9 +58,10 @@
             android:id="@+id/tvTituloFechaFundacionCiudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fecha de fundación:"
+            android:text="Fecha de fundación"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloNumeroHabitantesContenido" />
 
@@ -65,6 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1898-10-19"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionCiudad" />
 
@@ -72,9 +78,10 @@
             android:id="@+id/tvTituloEstaEnFiestasPatronales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fiestas patronales:"
+            android:text="Fiestas patronales"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionCiudadContenido" />
 
@@ -83,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="true"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloEstaEnFiestasPatronales" />
 

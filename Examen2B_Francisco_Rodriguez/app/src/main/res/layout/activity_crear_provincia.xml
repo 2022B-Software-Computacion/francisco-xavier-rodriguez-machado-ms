@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrearProvincia">
+    tools:context=".CrearProvincia"
+    android:background="#B0BFA9">
 
     <TextView
         android:id="@+id/tvCreateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAlignment="center"
         android:text="Crear provincia"
         android:textStyle="bold"
         android:textSize="30sp"
@@ -23,6 +25,7 @@
         android:id="@+id/etNombreProvincia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:hint="Nombre"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateTitle"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,6 +36,7 @@
         android:id="@+id/etFechaDeFundacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombreProvincia"
         android:hint="Fecha de fundación"/>
@@ -42,6 +46,7 @@
         android:id="@+id/etGradoDeSeguridad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etFechaDeFundacion"
         android:hint="Grado de seguridad"/>
@@ -51,6 +56,7 @@
         android:id="@+id/etEstaEnFiestasProvinciales"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:hint="Esta en fiestas proviciales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etGradoDeSeguridad"/>

@@ -16,9 +16,10 @@
             android:id="@+id/tvTituloNombreProvincia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre de la provincia:"
+            android:text="Nombre de la provincia"
             android:textStyle="bold"
             android:textSize="18sp"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
         <TextView
@@ -26,24 +27,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Pichincha"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloNombreProvincia"/>
-        <TextView
-            android:id="@+id/tvTituloGradoDeSeguridadContenido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Grado de Seguridad:"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTítuloNombreProvinciaContenido"/>
         <TextView
             android:id="@+id/tvTituloFechaFundacionContenido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="3.0"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Grado de Seguridad"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloGradoDeSeguridadContenido"/>
+        <TextView
+            android:id="@+id/tvTituloGradoDeSeguridadContenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTítuloNombreProvinciaContenido"/>
         <TextView
             android:id="@+id/tvTituloFechaFundacionProvincia"
             android:layout_width="match_parent"
@@ -51,6 +55,7 @@
             android:text="Fecha de fundación"
             android:textStyle="bold"
             android:textSize="18sp"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionContenido"/>
         <TextView
@@ -58,15 +63,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1898-06-12"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaFundacionProvincia"/>
         <TextView
             android:id="@+id/tvTituloFiestasProvinciales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Se encuentra en fiestas provinciales:"
+            android:text="Se encuentra en fiestas provinciales"
             android:textStyle="bold"
             android:textSize="18sp"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloFechaDeFundacionProvinciaContenido"/>
         <TextView
@@ -74,6 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="true"
+            android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloFiestasProvinciales"/>
 
